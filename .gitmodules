@@ -1,0 +1,4 @@
+[submodule "doc"]
+	path = doc
+	url = git@github.com:utisam/enctext.git
+	branch = gh-pages
