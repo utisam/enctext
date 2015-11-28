@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = 'enctext',
-    version = '0.1',
+    version = '0.2',
     packages = find_packages('src'),
     package_dir = {'':'src'},
     install_requires = [
@@ -12,6 +12,7 @@ setup(
     entry_points = {
         'console_scripts': [
             'vienc = enctext.vienc:main',
+            'catenc = enctext.catenc:main',
         ],
     },
     author = 'Masatoshi Tsushima',
