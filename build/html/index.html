@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to enctext’s documentation! &mdash; enctext 0.2 documentation</title>
+    <title>enctext &mdash; enctext 0.2 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -36,21 +36,43 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="welcome-to-enctext-s-documentation">
-<h1>Welcome to enctext&#8217;s documentation!<a class="headerlink" href="#welcome-to-enctext-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul class="simple">
-</ul>
+  <div class="section" id="enctext">
+<h1>enctext<a class="headerlink" href="#enctext" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>git clone https://github.com/utisam/enctext.git
+pip install enctext
+</pre></div>
 </div>
 </div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span>Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span>Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span>Search Page</span></a></li>
-</ul>
+<div class="section" id="how-to-use">
+<h2>How to Use<a class="headerlink" href="#how-to-use" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>vienc secret.txt
+catenc secret.txt
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">vienc</span></code> command uses <code class="docutils literal"><span class="pre">vipe</span></code>, so you can use favorite <code class="docutils literal"><span class="pre">EDITOR</span></code>.</p>
+<div class="highlight-python"><div class="highlight"><pre>EDITOR=emacs; vienc secret.txt
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The editting text remain in the temporary directory if the editor failed.
+Please check and remove it.</p>
+</div>
+</div>
+<div class="section" id="for-developpers">
+<h2>For Developpers<a class="headerlink" href="#for-developpers" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">enctext</span>
+
+<span class="n">raw_password</span> <span class="o">=</span> <span class="s">&#39;secret_password&#39;</span>
+<span class="n">raw_text</span> <span class="o">=</span> <span class="n">b</span><span class="s">&#39;This text will be encrypted.&#39;</span>
+
+<span class="n">encrypted</span> <span class="o">=</span> <span class="n">enctext</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">raw_password</span><span class="p">,</span> <span class="n">raw_text</span><span class="p">)</span>
+<span class="n">decrypted</span> <span class="o">=</span> <span class="n">enctext</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">raw_password</span><span class="p">,</span> <span class="n">encrypted</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -61,8 +83,12 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Welcome to enctext&#8217;s documentation!</a></li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#">enctext</a><ul>
+<li><a class="reference internal" href="#install">Install</a></li>
+<li><a class="reference internal" href="#how-to-use">How to Use</a></li>
+<li><a class="reference internal" href="#for-developpers">For Developpers</a></li>
+</ul>
+</li>
 </ul>
 <div class="relations">
 <h3>Related Topics</h3>
